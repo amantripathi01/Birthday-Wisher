@@ -31,8 +31,17 @@ describe('Countdown', () => {
     // Global cleanup logic
   });
 
-  test('renders without crashing', () => {
-    render(<Countdown />);
+  test("renders without crashing", () => {
+    const countdownData = {
+      isItBday: false,
+      days: 5,
+      hours: 12,
+      minutes: 30,
+      seconds: 15,
+    };
+    const name = "John";
+    render(<Countdown countdownData={countdownData} name={name} />);
+    // expect(container).toBeInTheDocument();
   });
 
   test('displays the countdown timer correctly', () => {
